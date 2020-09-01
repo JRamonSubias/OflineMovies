@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackGround"
+    tools:context=".UI.MovieInformation"
+    android:id="@+id/endView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ConstrainlayoutInformation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp"
+        android:transitionName="TransitionInformation">
+
+        <ImageView
+            android:id="@+id/imageViewCoverInformationTV"
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            android:background="@drawable/round_outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewDescripcionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="5dp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:inputType="textMultiLine"
+            android:justificationMode="inter_word"
+            android:maxLines="8"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.448"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSinopsisTV" />
+
+        <TextView
+            android:id="@+id/textViewFechaTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewTituloTV"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTituloTV" />
+
+        <TextView
+            android:id="@+id/textViewTituloTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewCoverInformationTV"
+            app:layout_constraintStart_toStartOf="@+id/imageViewCoverInformationTV"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewCoverInformationTV" />
+
+
+        <TextView
+            android:id="@+id/textViewLineaTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescripcionTV" />
+
+        <ImageView
+            android:id="@+id/imageViewStarTV"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/ic_star_24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewCalificacionTV"
+            app:layout_constraintEnd_toStartOf="@+id/textViewCalificacionTV"
+            app:layout_constraintTop_toTopOf="@+id/textViewCalificacionTV" />
+
+        <TextView
+            android:id="@+id/textViewCalificacionTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center|right"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewSinopsisTV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textViewSinopsisTV" />
+
+        <TextView
+            android:id="@+id/textViewSinopsisTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/Sinopsis"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroupTV" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFechaTV">
+
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">prinet</string>
+    <string name="moviePopular">Peliculas Populares</string>
+    <string name="tvPopular">TV Series Populares</string>
+    <string name="home">Inicio</string>
+    <string name="search">Buscar</string>
+    <string name="Top">Top</string>
+    <string name="login">Iniciar Sesion</string>
+    <string name="Sing_UPfragment">Crea tu Cuenta</string>
+    <string name="User">Usuario</string>
+    <string name="Name_Userr">Nombre de Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="passwordConfirm">Confirmar Contraseña</string>
+    <string name="goToLogin">Ya tienes Cuenta Presiona Aquí</string>
+    <string name="SingUp">Registrarse </string>
+
+
+    <string name="title_activity_login_movie">Signin</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Sinopsis">Sinopsis</string>
+
+    <string-array name="configuration_opcion">
+
+        <item>Gestionar Cuenta</item>
+        <item>Cerrar Sesión</item>
+        <item>Acerca de</item>
+    </string-array>
+
+</resources>

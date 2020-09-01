@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+       android:id="@+id/movieFragment"
+        android:icon="@drawable/ic_home_gray_24dp"
+        android:title="@string/home"
+        />
+
+    <item
+        android:id="@+id/searchFragment"
+        android:icon="@drawable/ic_search_gray_24dp"
+        android:title="@string/search"
+        />
+
+    <item
+        android:id="@+id/top_Fragment"
+        android:icon="@drawable/ic_star_gray_24dp"
+        android:title="@string/Top"
+        />
+
+</menu>

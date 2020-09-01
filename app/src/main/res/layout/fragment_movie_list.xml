@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.esime.oflinemovies.MovieFragment"
+     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    tools:context=".UI.MovieFragment"
+    android:id="@+id/ConstrainLayoutList"
+    android:transitionName="TransitionInformation"
+    android:background="@color/BackGround">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listMoviePopular"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPupulares"
+
+        tools:listitem="@layout/fragment_movie" />
+
+    <TextView
+        android:id="@+id/textViewPupulares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/moviePopular"
+        android:textColor="#F8F5F5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/listMoviePopular"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/listMoviePopular"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listTvPopular"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/listMoviePopular"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/listMoviePopular"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTvPopular"
+        tools:listitem="@layout/item_tv"/>
+
+    <TextView
+        android:id="@+id/textViewTvPopular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/tvPopular"
+        android:textColor="#F8F5F5"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewPupulares"
+        app:layout_constraintStart_toStartOf="@+id/textViewPupulares"
+        app:layout_constraintTop_toBottomOf="@+id/listMoviePopular" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

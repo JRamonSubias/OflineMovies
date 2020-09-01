@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/dialog"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textViewSingUp"
+        android:layout_width="280dp"
+        android:layout_height="38dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="@string/Sing_UPfragment"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EditTextSingUpUserName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/Name_Userr"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/colorAccent"
+        app:counterTextColor="@color/white"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSingUp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#F3F0F0"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/colorAccent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EditTextSingUpPasword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/colorAccent"
+        app:counterTextColor="@color/white"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextSingUpUserName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#F3F0F0"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/colorAccent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/EditTextSingUpPaswordConfirm"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/passwordConfirm"
+        android:textColorHint="@color/white"
+        app:boxStrokeColor="@color/colorAccent"
+        app:counterTextColor="@color/white"
+        app:helperTextTextColor="@color/white"
+        app:hintTextColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextSingUpPasword">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="#F3F0F0"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/colorAccent" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/ButtonSing_Up"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/colorAccent"
+        android:text="@string/SingUp"
+        android:textColor="#FFFFFF"
+        app:cornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewSingUp"
+        app:layout_constraintStart_toStartOf="@+id/textViewSingUp"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextSingUpPaswordConfirm" />
+
+    <WebView
+        android:id="@+id/webViewAuhtenticate"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonSing_Up"
+        app:layout_constraintStart_toStartOf="@+id/ButtonSing_Up"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonSing_Up" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
