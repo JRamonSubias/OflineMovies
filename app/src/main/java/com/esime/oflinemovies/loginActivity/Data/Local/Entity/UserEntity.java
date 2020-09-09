@@ -21,6 +21,7 @@ public class UserEntity {
         this.session_id = session_id;
     }
 
+
     public int getIdUser() {
         return idUser;
     }

@@ -141,6 +141,19 @@ public class UserRepositoy {
         return listUsers;
     }
 
+
+    //Obtenemos la informacion (UserName y el password) del usuario
+    public UserEntity getUserInformation(String username){
+        UserEntity userEntity = loginDao.selectUser(username);
+         String prueba = userEntity.getUserName();
+        return userEntity;
+    }
+
+    //metodo para actualizar un usuario trayendo su idDB
+    public void UpdateUser(String newUsername, String oldUsername){
+        loginDao.updateUserDB(newUsername,oldUsername);
+    }
+
 }
 
 

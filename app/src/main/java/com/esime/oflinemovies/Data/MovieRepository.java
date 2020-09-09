@@ -23,6 +23,7 @@ import com.esime.oflinemovies.Data.Remoto.model.SearchResponse;
 import com.esime.oflinemovies.Data.Remoto.model.TvInformationResponse;
 import com.esime.oflinemovies.Data.Remoto.model.TvResponse;
 import com.esime.oflinemovies.app.MyApp;
+import com.esime.oflinemovies.loginActivity.Data.Local.Entity.UserEntity;
 import com.esime.oflinemovies.network.NetworkBoundResource;
 import com.esime.oflinemovies.network.Resource;
 
@@ -301,6 +302,8 @@ public class MovieRepository {
 
     public void setId(int movie_id){
         this.movie_id = movie_id;}
+
+
 
 
     }

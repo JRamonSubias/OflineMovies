@@ -19,7 +19,6 @@ import com.esime.oflinemovies.Data.Local.Entity.GenerosEntity;
 import com.esime.oflinemovies.Data.Remoto.ApiConstants;
 import com.esime.oflinemovies.Data.Remoto.model.TvInformationResponse;
 import com.esime.oflinemovies.R;
-import com.esime.oflinemovies.RatingDialog;
 import com.esime.oflinemovies.ViewModel.TvInformationViewModel;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;

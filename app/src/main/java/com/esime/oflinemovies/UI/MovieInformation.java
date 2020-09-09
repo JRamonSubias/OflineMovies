@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -23,9 +22,7 @@ import com.esime.oflinemovies.Data.Local.Entity.GenerosEntity;
 import com.esime.oflinemovies.Data.Remoto.ApiConstants;
 import com.esime.oflinemovies.Data.Remoto.model.MovieCompleteResponse;
 import com.esime.oflinemovies.R;
-import com.esime.oflinemovies.RatingDialog;
 import com.esime.oflinemovies.ViewModel.MovieInformationViewModel;
-import com.esime.oflinemovies.app.MyApp;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipDrawable;
 import com.google.android.material.chip.ChipGroup;

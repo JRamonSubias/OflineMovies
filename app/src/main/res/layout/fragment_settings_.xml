@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/BackGround"
     android:padding="20dp"
-    tools:context=".UI.Top_Fragment">
+    tools:context=".UI.Settings_Fragment">
 
     <ListView
         android:id="@+id/listOpcion"

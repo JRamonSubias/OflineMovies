@@ -24,12 +24,12 @@ public class MovieViewModel extends ViewModel {
     public MovieViewModel(){
 
         movieRepository = new MovieRepository();
-       // popularMovie = movieRepository.getPopularMovies();
+
         popularMovie = movieRepository.getMovieWithOutBD();
         popularTv = movieRepository.getPopularTv();
     }
 
-   // public LiveData<Resource<List<MovieEntity>>> getPopularMovie(){ return popularMovie; }
+
     public LiveData<List<MovieEntity>> getPopularMovie(){return popularMovie;}
 
     public LiveData<Resource<List<TvEntity>>> getPopularTv(){return popularTv; }

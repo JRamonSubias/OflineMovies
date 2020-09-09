@@ -10,6 +10,7 @@ public class ApiConstants {
     public static final String APP_SETTING_FILE = "ID";
     public static final String SESSION_USER_ID="session_id";
     public static final String USER_SAVE="userName";
+    public static final String USER_ID_OF_DB="id_DB";
 
 
 

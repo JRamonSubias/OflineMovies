@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.esime.oflinemovies.loginActivity.Data.Local.Entity.UserEntity;
 
@@ -19,6 +20,10 @@ LiveData<List<UserEntity>> getAllUser();
 @Insert
     void insertAll(UserEntity userEntity);
 
+@Query("SELECT idUser,userName,password FROM user WHERE userName LIKE :username")
+     UserEntity selectUser(String username);
 
+@Query("UPDATE user SET userName = :newUsername WHERE userName LIKE :OldUsername")
+    void updateUserDB(String newUsername,String OldUsername);
 
 }

@@ -42,6 +42,13 @@ public class SharedPreferenceManager {
         editor.clear();
         editor.commit();
     }
+
+    public static void DeleteValue(String value){
+        SharedPreferences.Editor editor = getSharedPreference().edit();
+        editor.remove(value);
+        editor.commit();
+
+    }
 }
 
 

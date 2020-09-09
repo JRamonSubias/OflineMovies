@@ -1,4 +1,4 @@
-package com.esime.oflinemovies;
+package com.esime.oflinemovies.UI;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.RatingBar;
 
 import com.esime.oflinemovies.Data.Remoto.ApiConstants;
+import com.esime.oflinemovies.R;
 import com.esime.oflinemovies.ViewModel.MovieInformationViewModel;
 import com.esime.oflinemovies.ViewModel.TvInformationViewModel;
 

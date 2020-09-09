@@ -1,16 +1,13 @@
 package com.esime.oflinemovies.UI;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.esime.oflinemovies.CustomListAdapter;
-import com.esime.oflinemovies.Data.Remoto.ApiConstants;
 import com.esime.oflinemovies.R;
 import com.esime.oflinemovies.app.MyApp;
 import com.esime.oflinemovies.app.SharedPreferenceManager;
@@ -28,17 +23,17 @@ import com.esime.oflinemovies.loginActivity.UI.LoginActivity;
 
 import java.util.ArrayList;
 
-public class Top_Fragment extends Fragment {
+public class Settings_Fragment extends Fragment {
     ListView listViewOpciones;
 
-    public Top_Fragment() {
+    public Settings_Fragment() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fragment_top_, container, false);
+       View view = inflater.inflate(R.layout.fragment_settings_, container, false);
         FindByView(view);
         ArrayList<String> listOpcion = new ArrayList<>();
         listOpcion.add("Gestionar Cuenta");
@@ -98,6 +93,8 @@ public class Top_Fragment extends Fragment {
     }
 
     private void EditUser() {
+        GestionarCuenta gestionarCuenta = new GestionarCuenta();
+        gestionarCuenta.show(getChildFragmentManager(),"GestionarCuenta");
     }
 
     private void FindByView(View view){

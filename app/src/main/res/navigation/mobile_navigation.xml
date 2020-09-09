@@ -40,9 +40,9 @@
     </fragment>
     <fragment
         android:id="@+id/top_Fragment"
-        android:name="com.esime.oflinemovies.UI.Top_Fragment"
+        android:name="com.esime.oflinemovies.UI.Settings_Fragment"
         android:label="fragment_top_"
-        tools:layout="@layout/fragment_top_" />
+        tools:layout="@layout/fragment_settings_" />
 
 
     <fragment

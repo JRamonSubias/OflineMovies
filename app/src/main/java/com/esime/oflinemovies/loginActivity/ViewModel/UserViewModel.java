@@ -33,9 +33,17 @@ public class UserViewModel extends ViewModel {
         userRepositoy.InsertUser(user,password,session_id);
     }
 
-public LiveData<List<UserEntity>> getAllUser(){
+    public LiveData<List<UserEntity>> getAllUser(){
         listUsers = userRepositoy.getAllUser();
         return listUsers;
 }
+
+    public UserEntity getUserInformation(String username){
+       return userRepositoy.getUserInformation(username);
+    }
+
+    public void upDateUserDB(String newUsername, String oldUsername){
+        userRepositoy.UpdateUser(newUsername, oldUsername);
+    }
 
 }

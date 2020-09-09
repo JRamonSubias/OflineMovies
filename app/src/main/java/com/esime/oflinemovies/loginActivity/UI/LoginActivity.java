@@ -96,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
         for(int i=0; i<listUsers.size();i++){
             if(user.equals(listUsers.get(i).getUserName()) && password.equals(listUsers.get(i).getPassword())){
                 goToActivity(listUsers.get(i).getSession_id(), listUsers.get(i).getUserName());
-
             }
         }
     }
@@ -105,7 +104,7 @@ public class LoginActivity extends AppCompatActivity {
         if(checkBoxRememberme.isChecked()){
             SharedPreferenceManager.setSomeStringValue(ApiConstants.SESSION_USER_ID,id);
         }
-        SharedPreferenceManager.setSomeStringValue(user,ApiConstants.USER_SAVE);
+        SharedPreferenceManager.setSomeStringValue(ApiConstants.USER_SAVE,user);
         toActivity();
     }
 
