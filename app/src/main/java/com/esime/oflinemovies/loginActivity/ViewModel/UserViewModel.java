@@ -46,4 +46,8 @@ public class UserViewModel extends ViewModel {
         userRepositoy.UpdateUser(newUsername, oldUsername);
     }
 
+    public void updatePasswordDB(String newPassword, String oldPassword){
+        userRepositoy.updatePasswordDb(newPassword,oldPassword);
+    }
+
 }

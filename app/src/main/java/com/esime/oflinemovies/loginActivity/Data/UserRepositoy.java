@@ -154,6 +154,11 @@ public class UserRepositoy {
         loginDao.updateUserDB(newUsername,oldUsername);
     }
 
+    //metodo para actualizar password a la DB con Room
+    public void updatePasswordDb(String newPassword, String oldPassword){
+        loginDao.updatePasswordDB(newPassword,oldPassword);
+    }
+
 }
 
 

@@ -1,5 +1,6 @@
 package com.esime.oflinemovies.UI;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -15,17 +16,23 @@ import android.widget.Toast;
 
 import com.esime.oflinemovies.Data.Remoto.ApiConstants;
 import com.esime.oflinemovies.R;
+import com.esime.oflinemovies.app.GetPasswordTask;
+import com.esime.oflinemovies.app.MyApp;
 import com.esime.oflinemovies.app.SharedPreferenceManager;
+import com.esime.oflinemovies.app.updatePasswordTask;
 import com.esime.oflinemovies.loginActivity.Data.Local.Entity.UserEntity;
+import com.esime.oflinemovies.loginActivity.Data.UserRepositoy;
 import com.esime.oflinemovies.loginActivity.ViewModel.UserViewModel;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.concurrent.ExecutionException;
 
 public class GestionarCuenta extends DialogFragment {
     TextView tvUserName, tvPassword;
     Button btnApplyUser,btnApplyPassword, btnEditUser,btnEditPassword;
     TextInputLayout etUserName, etPasswrd,etPasswordConfirm;
     UserViewModel userViewModel;
-    String newUser, newPassword, password,oldPassword;
+    String newUser, passwordNew, passwordConfirm,oldPassword;
     UserEntity userEntity;
     int idUserDB;
 
@@ -62,11 +69,6 @@ public class GestionarCuenta extends DialogFragment {
             public void onClick(View v) {
                 etPasswordConfirm.setVisibility(View.VISIBLE);
                 btnApplyPassword.setVisibility(View.VISIBLE);
-                password = etPasswordConfirm.getEditText().getText().toString();
-                newPassword = etPasswrd.getEditText().getText().toString();
-
-
-
             }
         });
 
@@ -77,7 +79,7 @@ public class GestionarCuenta extends DialogFragment {
                 if(newUser.isEmpty()){
                     etUserName.setError("Ingrese nuevo nombre de usuario");
                 }else if(newUser.equals(tvUserName.getText().toString())){
-
+                     etUserName.setError("Mismo nombre de usuario.");
                 }else {
                     updateUserNameToDB(newUser);
                     Toast.makeText(getActivity(), "Usuario Actualizado", Toast.LENGTH_SHORT).show();
@@ -90,28 +92,49 @@ public class GestionarCuenta extends DialogFragment {
         btnApplyPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(password.isEmpty()){
-                    etPasswordConfirm.setError("Ingrese su Contraseña");
-                }else if(password.equals())
+                etPasswordConfirm.setError(null);
+                etPasswrd.setError(null);
+                passwordConfirm = etPasswordConfirm.getEditText().getText().toString();
+                passwordNew = etPasswrd.getEditText().getText().toString();
 
+                if(passwordNew.isEmpty()){
+                    if(passwordConfirm.isEmpty()){
+                        etPasswordConfirm.setError("Ingrese su contraseña");
+                    }else {
+                        try {
+                            if(passwordConfirm.equals(new GetPasswordTask(userViewModel)
+                                    .execute(passwordConfirm,tvUserName.getText().toString()).get())){
 
-                newPassword = etPasswrd.getEditText().getText().toString();
-                if(newPassword.isEmpty()){
+                                Toast.makeText(MyApp.getContext(), "Contraseña Correcta", Toast.LENGTH_SHORT).show();
+                                etPasswordConfirm.setVisibility(View.INVISIBLE);
+                                etPasswrd.setVisibility(View.VISIBLE);
+
+                            }else {
+                                Toast.makeText(MyApp.getContext(), "Contraseña Incorrecta", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }else if(passwordNew.isEmpty()){
                     etPasswrd.setError("Ingrese nueva contraseña");
-                }else if(newPassword.equals(tvPassword.getText().toString())){
-
-                }else {
-                    updatePasswordToDB(newPassword);
+                }else if(passwordNew.equals(passwordConfirm)){
+                    etPasswrd.setError("La contraseña es la misma");
+                }else{
+                    updatePasswordTask passwordTask = new updatePasswordTask(userViewModel);
+                    passwordTask.execute(passwordConfirm,passwordNew);
+                    Toast.makeText(MyApp.getContext(), "Contraseña Actualizada", Toast.LENGTH_SHORT).show();
+                    dismiss();
                 }
-            }
+             }
         });
 
         return view;
     }
 
-    private void updatePasswordToDB(String newPassword) {
-
-    }
 
     private void updateUserNameToDB(String newUser) {
         new Thread(new Runnable() {
@@ -131,24 +154,9 @@ public class GestionarCuenta extends DialogFragment {
                 String username = SharedPreferenceManager.getSomeStringValue(ApiConstants.USER_SAVE);
                 userEntity = userViewModel.getUserInformation(username);
                 tvUserName.setText(userEntity.getUserName());
-
             }
         }).start();
     }
-
-    private String loadInformationPaswword(){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                userEntity = userViewModel.getUserInformation(tvUserName.getText().toString());
-                return userEntity.getPassword();
-
-            }
-        }).start();
-    }
-
-
-
 
 
     private void findViewBy(View view) {
@@ -163,5 +171,10 @@ public class GestionarCuenta extends DialogFragment {
         etPasswordConfirm = view.findViewById(R.id.EditTextEditPaswordConfirm);
     }
 }
+
+
+
+
+
 
 

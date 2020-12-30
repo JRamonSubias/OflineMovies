@@ -26,4 +26,7 @@ LiveData<List<UserEntity>> getAllUser();
 @Query("UPDATE user SET userName = :newUsername WHERE userName LIKE :OldUsername")
     void updateUserDB(String newUsername,String OldUsername);
 
+@Query("UPDATE user SET password = :newPassword WHERE password LIKE :oldPassword")
+    void updatePasswordDB(String newPassword, String oldPassword);
+
 }
